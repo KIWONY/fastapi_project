@@ -5,8 +5,7 @@ from fastapi import FastAPI
 
 from app.common.conf import conf
 from app.database.conn import db
-from app.routes import index
-
+from app.routes import index, user
 
 
 def create_app():
@@ -23,6 +22,7 @@ def create_app():
 
     # 라우터 정의
     app.include_router(index.router)
+    app.include_router(user.router)
 
     return app
 
